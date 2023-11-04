@@ -1,0 +1,50 @@
+/* Calculator */
+import 'dart:io';
+
+main() {
+  print('OPEN CALCULATOR');
+  stdout.write('Enter the first number: ');
+
+  double? n1 = double.tryParse(stdin.readLineSync()!);
+  if (n1 == null) {
+    print('This is not a valid number or character');
+    return;
+  }
+  //------------------------------------------------------
+  stdout.write('Enter the second number: ');
+  double? n2 = double.tryParse(stdin.readLineSync()!);
+  if (n2 == null) {
+    print('This is not a valid number or character');
+    return;
+  }
+
+  var sum = (n1 + n2);
+  var subtract = (n1 - n2);
+  var multiplication = (n1 * n2);
+  var division = (n1 / n2);
+  //----------------------------------------------------------------
+  print('Choose:');
+  print('1- Addition');
+  print('2- Subtraction');
+  print('3- Multiplication');
+  print('4- Division');
+  //-----------------------------------------------------------------
+  stdout.write('What would you like to do: ');
+  var choice = stdin.readLineSync();
+  int? choiceInt = int.tryParse(choice!);
+
+  if (choiceInt != null) {
+    if (choiceInt == 1) {
+      print('The result is: ' + sum.toString());
+    }
+    if (choiceInt == 2) {
+      print('The result is: ' + subtract.toString());
+    }
+    if (choiceInt == 3) {
+      print('The result is: ' + multiplication.toString());
+    }
+    if (choiceInt == 4) {
+      print('The result is: ' + division.toString());
+    }
+  }
+}
